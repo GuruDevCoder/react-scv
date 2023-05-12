@@ -1,0 +1,30 @@
+{
+  "name": "<%= data.packageName %>",
+  "private": true,
+  "version": "0.0.0",
+  "description": "<%= data.description %>",
+  "main": "./build/umd/umd.js",
+  "react-scv": {
+    "appBuildEntry": "src/app.js",
+    "umdBuildEntry": "src/module/index.js",
+    "html": {
+      "title": "<%= data.appTitle %>",
+      "description": "<%= data.description %>"
+    },
+    "devServer": {
+      "port": "<%= data.port %>"
+    }
+  },
+  "scripts": {
+    "build": "react-scv build:app && react-scv build:umd",
+    "build:app": "react-scv build:app",
+    "build:umd": "react-scv build:umd",
+    "start": "react-scv start",
+    "test": "react-scv test",
+    "test:debug": "node --inspect-brk ./node_modules/react-scv/bin/react-scv test --runInBand"
+  },
+  "keywords": [],
+  "devDependencies": {
+    "react-scv": "0.0.14"
+  }
+}
